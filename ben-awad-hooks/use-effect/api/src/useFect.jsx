@@ -3,7 +3,7 @@ import {useEffect, useState } from "react";
 export const useFetch = url => {
     const [state, setState] = useState({ data: null, loading: true});
     useEffect(() => {
-        setState({data: null, loading: true});
+        setState(state => ({data : state.data, loading: true}));
         //? Ici ont est obliger d'utiliser une IIFE(Immediately Invoked Function Expression)
         //! C/ nous somme dans un useEffect Hooks.
         (async () => {
@@ -11,10 +11,9 @@ export const useFetch = url => {
             let value = await res.text();
             setState({ data: value, loading: false });
         })();
-        }, [url]);
+        }, [url, setState]);
     return state;
 }
-
 
 
 // On aurai pu le faire avec des callbaks comme sa
