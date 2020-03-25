@@ -9,8 +9,8 @@ const App = () => {
 
   return (
     <>
-    <input name='email' value={values.email} onChange={handleChange}/>
-    <input name='password' type='password' value={values.password} onChange={handleChange}/>
+      <input name='email' value={values.email} onChange={handleChange}/>
+      <input name='password' type='password' value={values.password} onChange={handleChange}/>
     </>
   );
 }
