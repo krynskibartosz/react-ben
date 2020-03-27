@@ -22,7 +22,9 @@ const App = () => {
       <input name='password' type='password' value={values.password} onChange={handleChange}/>
       <button onClick={() => 
       {inputRef.current.focus()
-      hello.current()}
+      hello.current()
+      console.log(values)
+      }
       }>Click</button>
       </>
     </main>
